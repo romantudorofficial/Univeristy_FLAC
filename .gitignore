@@ -1,3 +1,6 @@
 # Files to Ignore
 
 *.yy.c
+*.tab.c
+*.tab.h
+language

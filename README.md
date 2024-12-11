@@ -9,7 +9,7 @@
 
 - flex language_lexer.l
 - bison -d language_syntax.y
-- gcc lex.yy.c y.tab.c -o language
+- g++ lex.yy.c language_syntax.tab.c -o language
 
 
 #### Run the Program:
