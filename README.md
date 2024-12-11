@@ -1,1 +1,1 @@
-## Univeristy - Formal Languages Automata and Compilers
+## Univeristy - Formal Languages, Automata and Compilers
