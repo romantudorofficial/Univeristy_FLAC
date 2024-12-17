@@ -14,4 +14,4 @@
 
 #### Run the Program:
 
-- ./language example_program.in
+- ./language < example_program.in
