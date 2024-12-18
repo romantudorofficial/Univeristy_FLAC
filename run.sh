@@ -23,4 +23,4 @@ g++ lex.yy.c language_parser.tab.c -o language
 
 # Run the parser with the input file.
 
-./language < example_program.in
+./language example_program.in

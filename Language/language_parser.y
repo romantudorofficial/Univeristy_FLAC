@@ -5,10 +5,13 @@
 #include <map>
 #include <stdexcept>
 
+
 using namespace std;
+
 
 extern FILE* yyin;
 extern int yylex ();
+
 
 void yyerror (const char* s)
 {
@@ -62,6 +65,7 @@ double get_variable_value (const string& name)
     const char* typeval;
 }
 
+
 %token <strval> ID
 %token <intval> INT_VAL
 %token <floatval> FLOAT_VAL
@@ -84,6 +88,7 @@ double get_variable_value (const string& name)
 %left LT LE GT GE
 %left ADD SUB
 %left MUL DIV
+
 
 %%
 
@@ -228,6 +233,7 @@ expr:
 
 %%
 
+
 int main (int argc, char** argv)
 {
     try
@@ -240,6 +246,10 @@ int main (int argc, char** argv)
             {
                 cerr << "Error: Could not open file " << argv[1] << endl;
                 return 1;
+            }
+            else
+            {
+                cerr << "Opened file successfully.\n\n" << argv[1] << endl;
             }
 
             yyin = file; 
