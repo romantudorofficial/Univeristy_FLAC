@@ -1,41 +1,60 @@
 %{
+
 #include <iostream>
 #include <string>
 #include <map>
 #include <stdexcept>
+
 using namespace std;
 
 extern FILE* yyin;
-extern int yylex();
-void yyerror(const char* s) {
+extern int yylex ();
+
+void yyerror (const char* s)
+{
     cout << "Error: " << s << endl;
 }
 
-map<string, pair<string, double>> symbol_table;
+map <string, pair <string, double>> symbol_table;
 
-void declare_variable(const string& name, const string& type, double value = 0) {
-    if (symbol_table.find(name) != symbol_table.end()) {
+
+void declare_variable (const string& name, const string& type, double value = 0)
+{
+    if (symbol_table.find(name) != symbol_table.end())
+    {
         throw runtime_error("Variable '" + name + "' is already declared.");
     }
+
     symbol_table[name] = {type, value};
 }
 
-void assign_variable(const string& name, double value) {
-    if (symbol_table.find(name) == symbol_table.end()) {
+
+void assign_variable (const string& name, double value)
+{
+    if (symbol_table.find(name) == symbol_table.end())
+    {
         throw runtime_error("Variable '" + name + "' is not declared.");
     }
+
     symbol_table[name].second = value;
 }
 
-double get_variable_value(const string& name) {
-    if (symbol_table.find(name) == symbol_table.end()) {
+
+double get_variable_value (const string& name)
+{
+    if (symbol_table.find(name) == symbol_table.end())
+    {
         throw runtime_error("Variable '" + name + "' is not declared.");
     }
+
     return symbol_table[name].second;
 }
+
 %}
 
-%union {
+
+%union
+{
     int intval;
     float floatval;
     const char* strval;
@@ -106,7 +125,6 @@ func_section:
     func_decl func_section
     | 
     ;
-
 
 func_decl:
     type ID LPAREN param_list RPAREN LBRACKET statement_list RBRACKET {
@@ -210,21 +228,32 @@ expr:
 
 %%
 
-int main(int argc, char** argv) {
-    try {
-        if (argc > 1) {
+int main (int argc, char** argv)
+{
+    try
+    {
+        if (argc > 1)
+        {
             FILE* file = fopen(argv[1], "r");
-            if (!file) {
+
+            if (!file)
+            {
                 cerr << "Error: Could not open file " << argv[1] << endl;
                 return 1;
             }
+
             yyin = file; 
-        } else {
+        }
+
+        else
+        {
             cout << "Reading from standard input. Provide a file name as a parameter for file-based parsing.\n";
         }
 
         return yyparse();
-    } catch (const runtime_error& e) {
+    }
+    catch (const runtime_error& e)
+    {
         cerr << "Runtime error: " << e.what() << endl;
         return 1;
     }
