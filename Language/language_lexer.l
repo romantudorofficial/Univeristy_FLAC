@@ -1,6 +1,6 @@
 %{
 
-#include "language_syntax.tab.h"
+#include "language_parser.tab.h"
 #include <string.h>
 
 %}

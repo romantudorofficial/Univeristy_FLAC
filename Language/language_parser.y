@@ -252,6 +252,7 @@ int main (int argc, char** argv)
 
         return yyparse();
     }
+    
     catch (const runtime_error& e)
     {
         cerr << "Runtime error: " << e.what() << endl;
