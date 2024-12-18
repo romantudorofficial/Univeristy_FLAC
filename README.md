@@ -4,3 +4,8 @@
 #### How to Run the Program:
 
 - ./run.sh
+
+
+#### Useful Command:
+
+- bison -d language_parser.y -Wcounterexamples
