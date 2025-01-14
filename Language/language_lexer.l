@@ -1,13 +1,22 @@
 %{
+
 #include <iostream>
+
 #include "language_parser.tab.h"
 
 using namespace std;
+
 %}
+
+
 %option noyywrap
+
+
 %%
+
 ([-]?[1-9][0-9]*|0) {return VAL;}
 ([-]?[0]\.[0-9]+|[1-9][0-9]*\.[0-9]+) {return FLOAT_VAL;}
+
 "adevarat"|"fals" {return BOOL_VAL;}
 "intreg" {return INT;}
 "real" {return FLOAT;}
@@ -30,10 +39,12 @@ using namespace std;
 "structura" {return STRUCT;}
 "TypeOf" {return TYPEOF;}
 "Eval" {return EVAL;}
+
 [a-zA-Z][a-zA-Z0-9]* {
     yylval.strval = strdup(yytext);
     return ID;
 }
+
 "++" {return INC;}
 "--" {return DEC;}
 "<=" {return LE;}
@@ -49,12 +60,9 @@ using namespace std;
 "/" {return DIV;}
 "&&" {return AND;}
 "||" {return OR;}
+
 [ \t] ;
 \n {yylineno++;}
 . {return yytext[0];}
 ["].*["] {return STRING;}
 ['].['] {return CHARACTER;}
-
-
-
- 

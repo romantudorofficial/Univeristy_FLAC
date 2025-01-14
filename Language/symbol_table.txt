@@ -1,4 +1,4 @@
-TABELUL DE SIMBOLURI PENTRU VARIABILE
+TABEL DE SIMBOLURI PENTRU VARIABILE
 
 NUME           INFO           TIP            VALOARE        LOCATIE        
 ----------------------------------------------------------
