@@ -5,3 +5,4 @@
 *.tab.h
 *.vscode
 language
+ast_evaluator
