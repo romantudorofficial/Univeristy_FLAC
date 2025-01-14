@@ -1,0 +1,69 @@
+intreg gvar:=11;
+
+functie intreg MyFunction (){
+    intreg fvar:=1;
+}
+real ddd:=111;
+
+clasa MyClass{
+  privat:
+    intreg cvar1;
+    intreg cvar2;
+
+  public:
+    functie void SetSum();
+    functie intreg GetSum();
+}
+
+structura MyStruct{
+    intreg si;
+    bolean sb;
+    caracter sc;
+}A,B,C[101];
+
+incepe_program:{
+    intreg x:=1;
+    real f1;
+    real f2:=7.9;
+    constanta intreg c:=10;
+    intreg a:=3;
+    intreg b:=1;
+    constanta real dd;
+    b:=b+1;
+    c:=b+a;
+    a:=x*3+5;
+    caracter g:='a';
+    bolean ok := adevarat;
+    real v[10];
+    sir bbb := "Denis";
+    TypeOf(a);
+    Eval(c);
+    TypeOf(dd);
+    daca(x>a)
+    {
+        a:=x*3+100;
+        daca(x>a)
+        {
+            a:=x*3+100;
+        }
+        altfel
+        {
+            x:=a*3+100;
+        }
+    }
+    altfel
+    {
+        x:=a*3+100;
+    }
+    pentru(intreg i:=1;i<count;i++)
+    {
+        constanta intreg xz:=1001;
+        xz++;
+        --xz;
+    }
+    cat_timp(xz>x)
+    {
+        xz--;
+    }
+
+}termina_program
