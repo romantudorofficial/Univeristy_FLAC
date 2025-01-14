@@ -1,7 +1,9 @@
-TABEL DE SIMBOLURI PENTRU VARIABILE
+
+			TABEL DE SIMBOLURI PENTRU VARIABILE SI FUNCTII
+
 
 NUME           INFO           TIP            VALOARE        LOCATIE        
-----------------------------------------------------------
+-----------------------------------------------------------------------
 gvar           Variabila      INT            11             Global         
 MyFunction     Functie        INT            -              Global         
 fvar           Variabila      INT            1              MyFunction     

@@ -17,14 +17,14 @@ struct
     char *valoare;
     char *locatie;
 }
-symbol_table[101];
+symbol_table[1024];
 
 
 void print_table (int count)
 {
     if (!file.is_open())
     {
-        cerr << "\nEroare la deschiderea fisierului.\n";
+        cerr << "\nEroare la deschiderea fisierului!\n";
         return;
     }
 
@@ -34,24 +34,24 @@ void print_table (int count)
     int valoare_width = 15;
     int locatie_width = 15;
 
-    file << "TABEL DE SIMBOLURI PENTRU VARIABILE\n\n";
+    file << "\n\t\t\tTABEL DE SIMBOLURI PENTRU VARIABILE SI FUNCTII\n\n\n";
+
     file << left << setw(nume_width)    << "NUME"
                  << setw(info_width)    << "INFO"
                  << setw(tip_width)     << "TIP"
                  << setw(valoare_width) << "VALOARE" 
                  << setw(locatie_width) << "LOCATIE"
                  << "\n";
-    file << "----------------------------------------------------------\n";
+    
+    file << "-----------------------------------------------------------------------\n";
     
     for (int i = 0; i < count; i++)
-    {
         file << left << setw(nume_width)    << symbol_table[i].nume 
                      << setw(info_width)    << symbol_table[i].info
                      << setw(tip_width)     << symbol_table[i].tip
                      << setw(valoare_width) << symbol_table[i].valoare
                      << setw(locatie_width) << symbol_table[i].locatie
                      << "\n";
-    }
 }
 
 
