@@ -1,32 +1,69 @@
-incepe_program
-{
-    intreg a := 5;
-    real b := 3.14;
-    string message := "Salut lume";
+intreg gvar:=11;
 
-    Print(a);
-    Print(b);
-    Print(message);
+functie intreg MyFunction (){
+    intreg fvar:=1;
+}
+real ddd:=111;
 
-    daca (a < 10)
+clasa MyClass{
+  privat:
+    intreg cvar1;
+    intreg cvar2;
+
+  public:
+    functie void SetSum();
+    functie intreg GetSum();
+}
+
+structura MyStruct{
+    intreg si;
+    bolean sb;
+    caracter sc;
+}A,B,C[101];
+
+incepe_program:{
+    intreg x:=1;
+    real f1;
+    real f2:=7.9;
+    constanta intreg c:=10;
+    intreg a:=3;
+    intreg b:=1;
+    constanta real dd;
+    b:=b+1;
+    c:=b+a;
+    a:=x*3+5;
+    caracter g:='a';
+    bolean ok := adevarat;
+    real v[10];
+    sir bbb := "Denis";
+    TypeOf(a);
+    Eval(c);
+    TypeOf(dd);
+    daca(x>a)
     {
-        Print("a este mai mic decat 10");
+        a:=x*3+100;
+        daca(x>a)
+        {
+            a:=x*3+100;
+        }
+        altfel
+        {
+            x:=a*3+100;
+        }
     }
     altfel
     {
-        Print("a este mai mare sau egal cu 10");
+        x:=a*3+100;
+    }
+    pentru(intreg i:=1;i<count;i++)
+    {
+        constanta intreg xz:=1001;
+        xz++;
+        --xz;
+    }
+    cat_timp(xz>x)
+    {
+        xz--;
     }
 
-    cat_timp (a < 10) {
-        Print(a);
-        a := a + 1;
-    }
-
-    pentru (intreg i := 0; i < 5; i := i + 1) {
-        Print(i);
-    }
-
-    intreg rezultat := add(a, 2);
-    Print(rezultat);
-}
-termina_program
+}termina_program

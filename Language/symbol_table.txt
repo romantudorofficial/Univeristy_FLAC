@@ -2,24 +2,24 @@ TABELUL DE SIMBOLURI PENTRU VARIABILE
 
 NUME           INFO           TIP            VALOARE        LOCATIE        
 ----------------------------------------------------------
-h              Variabila      INT            11             Global         
+gvar           Variabila      INT            11             Global         
 MyFunction     Functie        INT            -              Global         
-as             Variabila      INT            1              MyFunction     
+fvar           Variabila      INT            1              MyFunction     
 ddd            Variabila      FLOAT          111            Global         
-bbbb           Variabila      INT            neinit         MyClass        
-aaaa           Variabila      INT            neinit         MyClass        
+cvar2          Variabila      INT            neinit         MyClass        
+cvar1          Variabila      INT            neinit         MyClass        
 SetSum         Functie        INT            -              MyClass        
 GetSum         Functie        INT            -              MyClass        
 sc             Variabila      INT            neinit         MyStruct       
 sb             Variabila      INT            neinit         MyStruct       
-sa             Variabila      INT            neinit         MyStruct       
+si             Variabila      INT            neinit         MyStruct       
 C[101]         Variabila      INT            neinit         Global         
 B              Variabila      INT            neinit         Global         
 A              Variabila      INT            neinit         Global         
 main           Functie        INT            -              Global         
 x              Variabila      INT            128            main           
-f              Variabila      FLOAT          neinit         main           
-ff             Variabila      FLOAT          7.9            main           
+f1             Variabila      FLOAT          neinit         main           
+f2             Variabila      FLOAT          7.9            main           
 c              Variabila      CONST INT      10             main           
 a              Variabila      INT            648            main           
 b              Variabila      INT            5              main           

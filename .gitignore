@@ -3,4 +3,5 @@
 *.yy.c
 *.tab.c
 *.tab.h
+*.vscode
 language
