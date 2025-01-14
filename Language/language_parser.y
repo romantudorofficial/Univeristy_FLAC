@@ -51,8 +51,6 @@ void adaugare (char c)
 
 char* TypeOf (char* arg)
 {
-    int OK = 0;
-
     for (int i = 0; i < count; i++)
         if (strcmp(symbol_table[i].nume, arg) == 0)
             return symbol_table[i].tip;
@@ -63,8 +61,6 @@ char* TypeOf (char* arg)
 
 char* Eval (char* arg)
 {
-    int OK = 0;
-
     for (int i = 0; i < count; i++)
         if (strcmp(symbol_table[i].nume, arg) == 0)
             return symbol_table[i].valoare;
@@ -211,7 +207,8 @@ for: FOR '(' arg1 ';' arg2 ';' arg3 ')' '{' bloc_instr '}';
 
 
 arg1: type ID ASSIGN value 
-    {   if (declarare_multipla($2, count) == true)
+    {   
+        if (declarare_multipla($2, count) == true)
         {
             printf("\nDeclarare multipla!\n"); 
             valid = 0;
@@ -262,14 +259,16 @@ expr: value
         char* b = get_value($3, count);
         char* a_type;
         char* b_type;
+
         a_type = TypeOf($1);
         b_type = TypeOf($3);
+
         if (strcmp(a_type, b_type) == 0)
         {
             int val_a = atoi(a);
             int val_b = atoi(b);
             int sum = val_a + val_b;
-            char temp[40]; 
+            char temp[40];
             sprintf(temp, "%d", sum);
             strcpy(val, temp);
             value_returned($1, count, val);
@@ -286,8 +285,10 @@ expr: value
         char* b = get_value($3, count);
         char* a_type;
         char* b_type;
+
         a_type = TypeOf($1);
         b_type = TypeOf($3);
+
         if (strcmp(a_type, b_type) == 0)
         {
             int val_a = atoi(a);
@@ -310,8 +311,10 @@ expr: value
         char* b = get_value($3, count);
         char* a_type;
         char* b_type;
+
         a_type = TypeOf($1);
         b_type = TypeOf($3);
+
         if (strcmp(a_type, b_type) == 0)
         {
             int val_a = atoi(a);
@@ -334,8 +337,10 @@ expr: value
         char* b = get_value($3, count);
         char* a_type;
         char* b_type;
+
         a_type = TypeOf($1);
         b_type = TypeOf($3);
+
         if (strcmp(a_type, b_type) == 0)
         {
             int val_a = atoi(a);
@@ -359,7 +364,7 @@ afirmatie: type ID ASSIGN value
         {
             if (declarare_multipla($2, count) == true)
             {
-                printf("\nDeclarare multipla\n"); 
+                printf("\nDeclarare multipla!\n"); 
                 valid = 0;
             } 
             else 
@@ -372,7 +377,7 @@ afirmatie: type ID ASSIGN value
         {
             if (declarare_multipla($2, count) == true)
             {
-                printf("\nDeclarare multipla\n"); 
+                printf("\nDeclarare multipla!\n"); 
                 valid = 0;
             }
             else
@@ -483,7 +488,7 @@ afirmatie: type ID ASSIGN value
 
 void yyerror (const char* s)
 {
-     printf("\nEroare: %s la linia:%d\n", s, yylineno);
+    printf("\nEroare: %s la linia: %d!\n", s, yylineno);
 }
 
 
