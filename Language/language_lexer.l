@@ -24,19 +24,25 @@ using namespace std;
 "caracter" {return CHAR;}
 "sir" {return STR;}
 "constanta" {return CONST;}
+
 "void" {return VOID;}
 "return" {return RETURN;}
+
 "incepe_program:{" {return START;}
 "}termina_program" {return END;}
+
 "daca" {return IF;}
 "altfel" {return ELSE;}
 "pentru" {return FOR;}
 "cat_timp" {return WHILE;}
+
 "functie" {return FUNCTION;}
 "clasa" {return CLASS;}
+"structura" {return STRUCT;}
+
 "public:" {return PUBLIC;}
 "privat:" {return PRIVAT;}
-"structura" {return STRUCT;}
+
 "TypeOf" {return TYPEOF;}
 "Eval" {return EVAL;}
 
@@ -47,22 +53,27 @@ using namespace std;
 
 "++" {return INC;}
 "--" {return DEC;}
+
 "<=" {return LE;}
 ">=" {return GE;}
 "==" {return EQ;}
-":=" {return ASSIGN;}
 "<" {return LT;}
 ">" {return GT;}
 "!=" {return NE;}
+
+":=" {return ASSIGN;}
+
 "+" {return ADD;}
 "-" {return SUB;}
 "*" {return MUL;}
 "/" {return DIV;}
+
 "&&" {return AND;}
 "||" {return OR;}
 
 [ \t] ;
 \n {yylineno++;}
 . {return yytext[0];}
+
 ["].*["] {return STRING;}
 ['].['] {return CHARACTER;}
