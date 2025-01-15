@@ -132,10 +132,10 @@ bloc_struct: type ID ';' bloc_struct { strcpy(nume, $2); strcpy(val, "neinit"); 
            | BOOL ID ';' bloc_struct { strcpy(nume, $2); strcpy(val, "neinit"); adaugare('V');}
            | STRING ID ';' bloc_struct { strcpy(nume, $2); strcpy(val, "neinit"); adaugare('V');}
            | CHAR ID ';' bloc_struct { strcpy(nume, $2); strcpy(val, "neinit"); adaugare('V');}
-           | type ID ASSIGN value ';' bloc_privat { strcpy(nume, $2); strcpy(val, $4); adaugare('V');}
-           | BOOL ID ASSIGN value ';' bloc_privat { strcpy(nume, $2); strcpy(val, $4); adaugare('V');}
-           | STRING ID ASSIGN value ';' bloc_privat { strcpy(nume, $2); strcpy(val, $4); adaugare('V');}
-           | CHAR ID ASSIGN value ';' bloc_privat { strcpy(nume, $2); strcpy(val, $4); adaugare('V');}
+           | type ID ASSIGN value ';' bloc_struct { strcpy(nume, $2); strcpy(val, $4); adaugare('V');}
+           | BOOL ID ASSIGN value ';' bloc_struct { strcpy(nume, $2); strcpy(val, $4); adaugare('V');}
+           | STRING ID ASSIGN value ';' bloc_struct { strcpy(nume, $2); strcpy(val, $4); adaugare('V');}
+           | CHAR ID ASSIGN value ';' bloc_struct { strcpy(nume, $2); strcpy(val, $4); adaugare('V');}
            |
            ;
 

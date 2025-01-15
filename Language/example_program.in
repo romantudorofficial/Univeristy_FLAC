@@ -35,7 +35,7 @@ incepe_program:{
     caracter g:='a';
     bolean ok := adevarat;
     real v[10];
-    sir bbb := "Denis";
+    sir bbb := "lfac";
     TypeOf(a);
     Eval(c);
     TypeOf(dd);
